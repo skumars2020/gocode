@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"net/http"
+	"D:/Go/gocode/src/Project/structs"
 )
 
 func main() {
@@ -12,6 +14,7 @@ func main() {
 				Code: http.StatusOK,
 				Body: "pong",
 			}
+			json.NewEncoder(w).Encode(data)
 		}
 	})
 
